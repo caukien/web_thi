@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css_admin.css">
+    <link rel="stylesheet" href="./css_admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://use.fontawesome.com/2145adbb48.js"></script>
     <script src="https://kit.fontawesome.com/a42aeb5b72.js" crossorigin="anonymous"></script>
@@ -22,7 +22,7 @@
         <label class="logo">ADMIN</label>
         <ul>
             <li><a href="trangchu_admin.php" class="active">Quản lý Sản phẩm</a></li>
-            <!-- <li><a href="categoriesList.php" >Quản lý danh mục</a></li> -->
+            <li><a href="danhmuc.php" >Quản lý danh mục</a></li>
             <!-- <li><a href="orderlist.php">Quản lý Đơn hàng</a></li> -->
         </ul>
     </nav>
@@ -42,14 +42,17 @@
                 <label for="image">Hình ảnh</label>
                 <input type="file" id="image" name="image" required>
 
-                <!-- <label for="cateId">Loại sản phẩm</label> -->
-                <!-- <select id="cateId" name="cateId">
+                <label for="cateId">Loại sản phẩm</label>
+                <select id="cateId" name="cateId">
                     <?php
-                    foreach ($categoriesList as $key => $value) { ?>
+                    $db = mysqli_connect('localhost', 'root', '','web_phukien');
+                    $sql = "SELECT * from categories WHERE status =1";
+                    $row = mysqli_query($db, $sql);
+                    while($value = mysqli_fetch_array($row)){ ?>
                         <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
                     <?php }
                     ?>
-                </select> -->
+                </select>
 
                 <label for="qty">Số lượng</label>
                 <input type="number" id="qty" name="qty" required min="1">
