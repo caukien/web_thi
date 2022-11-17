@@ -245,3 +245,44 @@ img{
   opacity: 1;
   right: 0;
 }
+
+.container_logout{
+  min-height: 100vh;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.container_logout .content{
+  width: 700px;
+}
+
+.container_logout .content h3{
+  text-transform: uppercase;
+  font-size: 5vw;
+}
+
+.container_logout .content p{
+  font-size: 20px;
+  padding:10px 0;
+}
+
+.container_logout .content p span{
+  color:crimson;
+}
+
+.container_logout .content .logout{
+  display: inline-block;
+  padding:10px 35px;
+  font-size: 20px;
+  margin-top: 10px;
+  background-color: #000;
+  color:#fff;
+}
+
+.container_logout .content .logout:hover{
+  background-color: crimson;
+}

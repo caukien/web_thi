@@ -20,8 +20,9 @@
         </label>
         <label class="logo">ADMIN</label>
         <ul>
-            <li><a href="trangchu_admin.php" >Quản lý Sản phẩm</a></li>
-            <li><a href="categoriesList.php" class="active">Quản lý danh mục</a></li>
+            <li><a href="./header.php" >Hồ sơ</a></li>
+            <li><a href="./trangchu_admin.php" >Quản lý Sản phẩm</a></li>
+            <li><a href="./danhmuc.php" class="active">Quản lý danh mục</a></li>
             <!-- <li><a href="orderlist.php" id="order">Quản lý Đơn hàng</a></li> -->
         </ul>
     </nav>

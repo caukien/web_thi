@@ -1,4 +1,26 @@
+<?php
+  @include '../config.php';
 
+  session_start();
+
+  if(isset($_POST['dangnhap'])){
+      $username = $_POST['username'];
+    // $email = mysqli_real_escape_string($conn, $_POST['usermail']);
+    $pass = $_POST['password'];
+
+    $select = " SELECT * FROM member WHERE username = '$username' && password = '$pass'";
+
+    $result = mysqli_query($conn, $select);
+
+    if(mysqli_num_rows($result) > 0){
+        $_SESSION['username'] = $username;
+        header('Location:header.php');
+    }else{
+        $error[] = 'Tài khoản hoặc mật khẩu không đúng.';
+    }
+
+  }
+?>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,7 +43,7 @@
     </div>
 
     <!-- Login Form -->
-    <form action ="login_submit.php" method="POST">
+    <form action ="" method="POST">
       <input type="text" id="login" class="fadeIn second" name="username" placeholder="Tên đăng nhập">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="Mật khẩu">
       <input type="submit" class="fadeIn fourth" value="Log In" name="dangnhap">

@@ -1,4 +1,10 @@
+<?php
+        session_start();
 
+        if(!isset($_SESSION['username'])){
+           header('location:login.php');
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +27,7 @@
         </label>
         <label class="logo">ADMIN</label>
         <ul>
+            <li><a href="./header.php" >Hồ sơ</a></li>
             <li><a href="trangchu_admin.php" class="active">Quản lý Sản phẩm</a></li>
             <li><a href="danhmuc.php" >Quản lý danh mục</a></li>
             <!-- <li><a href="orderlist.php">Quản lý Đơn hàng</a></li> -->

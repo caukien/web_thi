@@ -1,3 +1,10 @@
+<?php
+        session_start();
+    // session_destroy();
+        if(!isset($_SESSION['username'])){
+           header('location:login.php');
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,8 +29,9 @@
         </label>
         <label class="logo">Trang quản trị</label>
         <ul>
-            <li><a href="./admin/trangchu_admin.php" class="active">Quản lý Sản phẩm</a></li>
-            <li><a href="./danhmuc.php">Quản lý Danh mục</a></li>
+            <li><a href="./header.php" >Hồ sơ</a></li>
+            <li><a href="trangchu_admin.php" class="active">Quản lý Sản phẩm</a></li>
+            <li><a href="danhmuc.php" >Quản lý danh mục</a></li>
             <!-- <li><a href="orderlist.php">Quản lý Đơn hàng</a></li> -->
         </ul>
     </nav>
@@ -71,63 +79,6 @@
                 <?php
             }
         ?>
-
-    
-        <!-- <?php $count = 1;
-        if ($list) { ?> -->
-            
-                <!-- <?php foreach ($list as $key => $value) { ?>
-                    <tr>
-                        <td><?= $count++ ?></td>
-                        <td><?= $value['name'] ?></td>
-                        <td><img class="image-cart" src="uploads/<?= $value['image'] ?>" alt=""></td>
-                        <td><?= number_format($value['originalPrice'], 0, '', ',') ?> VND</td>
-                        <td><?= number_format($value['promotionPrice'], 0, '', ',') ?> VND</td>
-                        <td><?= $value['fullName'] ?></td>
-                        <td><?= $value['qty'] ?></td>
-                        <td><?= ($value['status']) ? "Active" : "Block" ?></td>
-                        <td>
-                            <a href="edit_product.php?id=<?= $value['id'] ?>">Xem/Sửa</a>
-                            <?php
-                            if ($value['status']) { ?>
-                                <form action="productlist.php" method="post">
-                                    <input type="text" name="id" hidden value="<?= $value['id'] ?>" style="display: none;">
-                                    <input type="submit" value="Khóa" name="block">
-                                </form>
-                            <?php } else { ?>
-                                <form action="productlist.php" method="post">
-                                    <input type="text" name="id" hidden value="<?= $value['id'] ?>" style="display: none;">
-                                    <input type="submit" value="Mở" name="active">
-                                </form>
-                            <?php } ?>
-                        </td>
-                    </tr> -->
-                <?php } ?>
-            </table>
-        <?php } else { ?>
-            <h3>Chưa có sản phẩm nào...</h3>
-        <?php } ?>
-        <div class="pagination">
-            <a href="productlist.php?page=<?= (isset($_GET['page'])) ? (($_GET['page'] <= 1) ? 1 : $_GET['page'] - 1) : 1 ?>">&laquo;</a>
-            <?php
-            for ($i = 1; $i <= $pageCount; $i++) {
-                if (isset($_GET['page'])) {
-                    if ($i == $_GET['page']) { ?>
-                        <a class="active" href="productlist.php?page=<?= $i ?>"><?= $i ?></a>
-                    <?php } else { ?>
-                        <a href="productlist.php?page=<?= $i ?>"><?= $i ?></a>
-                    <?php  }
-                } else {
-                    if ($i == 1) { ?>
-                        <a class="active" href="productlist.php?page=<?= $i ?>"><?= $i ?></a>
-                    <?php  } else { ?>
-                        <a href="productlist.php?page=<?= $i ?>"><?= $i ?></a>
-                    <?php   } ?>
-                <?php  } ?>
-            <?php }
-            ?>
-            <a href="productlist.php?page=<?= (isset($_GET['page'])) ? $_GET['page'] + 1 : 2 ?>">&raquo;</a>
-        </div>
     </div>
     </div>
 </body>

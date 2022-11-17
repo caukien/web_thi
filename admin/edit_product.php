@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
+   header('location:login.php');
+}
     include 'fnc_editproduct.php';
     if(isset($_POST['submit'])){
         $get_cate = mysqli_fetch_assoc($product->getProduct($_GET['edit_id']));
@@ -27,9 +31,10 @@
         </label>
         <label class="logo">ADMIN</label>
         <ul>
-            <li><a href="trangchu_admin.php" class="active">Quản lý Sản phẩm</a></li>
-            <!-- <li><a href="categoriesList.php">Quản lý Danh mục</a></li>
-            <li><a href="orderlist.php">Quản lý Đơn hàng</a></li> -->
+            <li><a href="./header.php" >Hồ sơ</a></li>
+            <li><a href="./trangchu_admin.php" class="active">Quản lý Sản phẩm</a></li>
+            <li><a href="./danhmuc.php" >Quản lý danh mục</a></li>
+            <!-- <li><a href="orderlist.php">Quản lý Đơn hàng</a></li> -->
         </ul>
     </nav>
     <div class="title">
