@@ -37,7 +37,6 @@
         <h1>Thêm mới sản phẩm</h1>
     </div>
     <div class="container">
-        <p style="color: green;"><?= !empty($result) ? $result : '' ?></p>
         <div class="form-add">
             <form action="fnc_addprd.php" method="POST" enctype="multipart/form-data">
                 <label for="name">Tên sản phẩm</label>

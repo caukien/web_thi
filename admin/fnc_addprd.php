@@ -6,8 +6,6 @@
     }
     $name = $_POST['name'];
     $originalPrice = $_POST['originalPrice'];
-    // $promotionPrice = $_POST['promotionPrice'];
-    // $cateId = $_POST['cateId'];
     $des = $_POST['des'];
     $qty = $_POST['qty'];
     $cate = $_POST['cateId'];

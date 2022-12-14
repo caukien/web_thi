@@ -23,7 +23,7 @@
             <li><a href="./header.php" >Hồ sơ</a></li>
             <li><a href="./trangchu_admin.php" >Quản lý Sản phẩm</a></li>
             <li><a href="./danhmuc.php" class="active">Quản lý danh mục</a></li>
-            <!-- <li><a href="orderlist.php" id="order">Quản lý Đơn hàng</a></li> -->
+            <li><a href="donhang.php" id="order">Quản lý Đơn hàng</a></li>
         </ul>
     </nav>
     <div class="title">
@@ -40,6 +40,10 @@
                     <th>Thao tác</th>
                 </tr>
                 <?php
+                    session_start();
+                        if(!isset($_SESSION['username'])){
+                           header('location:login.php');
+                        }
                     $db = mysqli_connect("localhost", "root", "", "web_phukien");
                     $sql = "select * from categories";
                     $result = mysqli_query($db, $sql);

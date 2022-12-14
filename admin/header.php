@@ -32,7 +32,7 @@
             <li><a href="./header.php" class="active">Hồ sơ</a></li>
             <li><a href="./trangchu_admin.php">Quản lý Sản phẩm</a></li>
             <li><a href="./danhmuc.php">Quản lý Danh mục</a></li>
-            <!-- <li><a href="orderlist.php">Quản lý Đơn hàng</a></li> -->
+            <li><a href="donhang.php">Quản lý Đơn hàng</a></li>
         </ul>
     </nav>
     <div style="min-height: 100vh;
